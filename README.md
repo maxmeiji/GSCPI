@@ -1,10 +1,17 @@
-# GSCPI Project
+# Are Foundation Models Effective for Time Series Forecasting?   
+**(Project ADSL-113-2)**  
 
+## Introduction  
 
-## Introduction
+**In our perspective, somewhat.**  
 
-The github repository is for Time series foundation mdoel implementation. We currently have two foundation models to use: TimesFM (ICML 2024) and TimeGPT-1 (arXiv preprint).
-The dataset is GSCPI (Glabal Supply Chain Pressure Index) from the Federal Reserve Bank.
+With the advancement of foundation models like GPT-3 in NLP and ViTs in computer vision, researchers have started exploring their application in time series forecasting. In this project, we evaluate the effectiveness of current foundation models in this domain. Specifically, we test two open-source foundation models—**TimesFM** and **TimeGPT-1**—on the **GSCPI** dataset, a real-world dataset focused on the global supply chain. This dataset is critical for manufacturing and semiconductor supply chains and exhibits highly volatile patterns.  
+
+Additionally, we compare these models with unimodal baselines, highlighting their strengths and limitations in time series forecasting.  
+
+<p align="center">
+  <img src="pic/GSCPI.png" alt="Dataset visualization" width="600">
+</p>
 
 
 ## File Structure
@@ -26,10 +33,11 @@ GSCPI/
 - `model/`: code for different foundation models
 - `pic/`: save output figures for different models
 - `FM.py`: main.py for data loading, model loading, and inferencing.
-- `.sh files/`: running scripts.
+- `scripts/ & .sh files`: running scripts.
 
+---
 
-## Installation
+## Requirements
 
 There are two ways to install required packages
 
@@ -66,10 +74,45 @@ Execute the inference file:
 ```
 ./{model_name}.sh
 ```
+"Baseline scripts can be found in the scripts folder."
 
+---
 
-## Data Description
+## Results
 
-Refer to the data_provider directory for detailed information about how to load the dataset.
+We use the **GSCPI index** as input, consisting of a total of  319 instances. The lookback window is set to 32, and the prediction length is  6.
 
-The input data should include a 'Date' column and at least one additional feature.
+<p align="center">
+  <img src="pic/Main_Result.png" alt="Main Result" width="600">
+</p>
+
+## Discussion
+As shown in the main results, the foundation models generally perform well on the test datasets. This outcome can be attributed to the nature of the dataset: limited instances (a total of 319), high volatility, and significant conceptual drift.
+
+However, the foundation models do not outperform the unimodal baselines on the training data, which is somewhat expected. This behavior can be explained by the fact that the  baselines are more effective when there is a larger number of instances available for learning patterns. This also aligns with the concerns raised in previous research regarding the effectiveness of foundation models for time series tasks. Specifically, when sufficient and highly patterned training data is available, training a local forecasting model may be a more efficient approach.
+
+In our perspective, at least for now, foundation models show promise for forecasting tasks, but their success is heavily dependent on the nature of the dataset. There is still considerable room for improvement before foundation models can achieve the same level of success in time series forecasting as they have in domains like NLP and computer vision.
+
+#### Below we also list out the pros and cons of time series foundation models in the time series domain:
+
+#### Pros
+- **Effective for limited data**
+- **Convenient for generalization across datasets**
+- **Scalable** for large, complex time series problems
+
+#### Cons
+- **Costly in terms of computation**
+- **Less effective for large, structured datasets**
+- **Require careful tuning** for optimal performance
+
+---
+
+## Acknowledgements  
+
+Special thanks to the following useful GitHub repositories:  
+
+- [Nixtla](https://github.com/Nixtla/nixtla)  
+- [TimesFM](https://github.com/google-research/timesfm)  
+- [PatchTST](https://github.com/yuqinie98/PatchTST)  
+- [DLinear](https://github.com/vivva/DLinear)  
+
