@@ -97,7 +97,7 @@ In our perspective, at least for now, foundation models show promise for forecas
 
 #### Pros
 - Effective for limited data
-- Convenient for generalization across datasets**
+- Convenient for generalization across datasets
 - Scalable for large, complex time series problems
 
 #### Cons
