@@ -1,5 +1,5 @@
 # Are Foundation Models Effective for Time Series Forecasting?   
-**(Project ADSL-113-2)**  
+**(Project NYCU-ADSL-113-2)**  
 
 ## Introduction  
 
