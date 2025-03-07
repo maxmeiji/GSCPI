@@ -96,14 +96,14 @@ In our perspective, at least for now, foundation models show promise for forecas
 #### Below we also list out the pros and cons of time series foundation models in the time series domain:
 
 #### Pros
-- **Effective for limited data**
-- **Convenient for generalization across datasets**
-- **Scalable** for large, complex time series problems
+- Effective for limited data
+- Convenient for generalization across datasets**
+- Scalable for large, complex time series problems
 
 #### Cons
-- **Costly in terms of computation**
-- **Less effective for large, structured datasets**
-- **Require careful tuning** for optimal performance
+- Costly in terms of computation
+- Less effective for large, structured datasets
+- Require careful tuning for optimal performance
 
 ---
 
