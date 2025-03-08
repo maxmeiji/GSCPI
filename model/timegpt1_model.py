@@ -14,7 +14,7 @@ class TimeGPT1:
         # Initialize the TimeGPT-1 model
         # Define the api through https://docs.nixtla.io/docs/getting-started-timegpt_quickstart
         
-        self.tgpt1 = NixtlaClient(api_key = 'nixtla-tok-ZHK99T12mPB1nhATxHmSPNOFEomAXHC02Ior1DJs4mBFp5iLgfUjKaZVr39WwhR6TBAbpfLfmYwaZDd7')
+        self.tgpt1 = NixtlaClient(api_key = '')
         self.tgpt1.validate_api_key()    
         self.pred_len = horizon_len
 
